@@ -4,25 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Hoster - Firebase App</title>
+    <title>Media Hoster - Sign In</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<style>
-    body {
-        background-color: antiquewhite;
-        margin: 0;
-    }
-</style>
 
 <body>
+    <div class="container">
+        <div class="logo">
+            <h1>MediaHoster</h1>
+            <p>Share your moments, beautifully</p>
+        </div>
 
+        <div class="sign-in-content">
+            <p class="welcome-text">Welcome! Sign in to continue</p>
+            <button class="google-btn" id="googleSignIn">
+                <span class="material-icons">login</span>
+                Continue with Google
+            </button>
+        </div>
+    </div>
 
-    <script type="module">
-
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-
-
-        const firebaseConfig = {
+    <script>
+        window.FIREBASE_CONFIG = {
             apiKey: "{{ firebase_config.apiKey }}",
             authDomain: "{{ firebase_config.authDomain }}",
             projectId: "{{ firebase_config.projectId }}",
@@ -31,14 +41,8 @@
             appId: "{{ firebase_config.appId }}",
             measurementId: "{{ firebase_config.measurementId }}"
         };
-
-
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-
-        console.log("Firebase initialized successfully!");
-        console.log("Project ID:", firebaseConfig.projectId);
     </script>
+    <script type="module" src="/static/js/auth.js"></script>
 </body>
 
 </html>
